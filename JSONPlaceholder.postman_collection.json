@@ -1,0 +1,162 @@
+{
+  "info": {
+    "_postman_id": "b034f319-7681-4c0a-a0fd-62c67fa42264",
+    "name": "JSONPlaceholder",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59097200",
+    "_collection_link": "https://go.postman.co/collection/59097200-b034f319-7681-4c0a-a0fd-62c67fa42264?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Obtener usuarios",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"la respuesta no contiene errores\", function(){\r\n    var jsonData = pm.response.json();\r\n    pm.expect(jsonData).to.not.have.property(\"error\");\r\n});\r\n"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/users/:idUsers",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            ":idUsers"
+          ],
+          "variable": [
+            {
+              "key": "idUsers",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear usuario",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"status code is 201 Created\", function() {\r\n    pm.response.to.have.status(201);\r\n});\r\n\r\nconst data = pm.response.json();\r\npm.test(\"El nombre es correcto\", function () {\r\n    pm.expect(data.name).to.eql(\"Jeremies Chinchay\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Jeremies Chinchay\",\r\n    \"username\": \"JeremiesC\",\r\n    \"email\": \"Jeremies@gmail.com\",\r\n    \"address\": {\r\n        \"street\": \"Av. Los Olivos\",\r\n        \"suite\": \"Dpto. 302\",\r\n        \"city\": \"Lima\",\r\n        \"zipcode\": \"15001\",\r\n        \"geo\": {\r\n            \"lat\": \"-12.0464\",\r\n            \"lng\": \"-77.0428\"\r\n        }\r\n    },\r\n    \"phone\": \"999888777\",\r\n    \"website\": \"Jeremies.com\",\r\n    \"company\": {\r\n        \"name\": \"Tech Solutions\",\r\n        \"catchPhrase\": \"Innovative technology solutions\",\r\n        \"bs\": \"digital transformation\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Modificar informacion",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code es 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\nconst data = pm.response.json();\r\npm.test(\"El nombre fue actualizado\", function () {\r\n    pm.expect(data.name).to.eql(\"Carlos Jair\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 10,\r\n    \"name\": \"Carlos Jair\",\r\n    \"username\": \"Carlos\",\r\n    \"email\": \"Carlos.biz\",\r\n    \"address\": {\r\n        \"street\": \"Kattie Turnpike\",\r\n        \"suite\": \"Suite 198\",\r\n        \"city\": \"Lebsackbury\",\r\n        \"zipcode\": \"31428-2261\",\r\n        \"geo\": {\r\n            \"lat\": \"-38.2386\",\r\n            \"lng\": \"57.2232\"\r\n        }\r\n    },\r\n    \"phone\": \"024-648-3804\",\r\n    \"website\": \"Carlos.net\",\r\n    \"company\": {\r\n        \"name\": \"Carlos LLC\",\r\n        \"catchPhrase\": \"Centralized empowering task-force\",\r\n        \"bs\": \"target end-to-end models\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users/:userId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            ":userId"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete Usuario",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code es 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"La solicitud DELETE fue procesada\", function () {\r\n    pm.expect(pm.response.code).to.eql(200);\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/users/:userId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            ":userId"
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
