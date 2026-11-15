@@ -40,7 +40,7 @@ Y mediante scripts validamos que se ejecuto exitosamente.
 
 ![Captura de Postman](Capturas/8.png)
 
-## Método delete
+## Método DELETE
 
 Se realizo la eliminación de un usuario exitosamente
 
