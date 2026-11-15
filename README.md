@@ -25,3 +25,7 @@ Y por ultimo mediante scripts valido correctamente el status
 Creación de un nuevo usuario
 
 ![Captura de Postman](Capturas/5.png)
+
+Y mediante scripts validamos que la creación de usuarios se ejecuto exitosamente.
+
+![Captura de Postman](Capturas/6.png)
