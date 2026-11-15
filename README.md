@@ -19,3 +19,9 @@ Luego creo la Variable Path para buscar usuarios individualmente.
 Y por ultimo mediante scripts valido correctamente el status
 
 ![Captura de Postman](Capturas/4.png)
+
+## Método POST
+
+Creación de un nuevo usuario
+
+![Captura de Postman](Capturas/5.png)
