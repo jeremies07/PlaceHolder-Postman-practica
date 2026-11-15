@@ -29,3 +29,13 @@ Creación de un nuevo usuario
 Y mediante scripts validamos que la creación de usuarios se ejecuto exitosamente.
 
 ![Captura de Postman](Capturas/6.png)
+
+## Método PUT
+
+Se realizo la Modificación de información de usuario
+
+![Captura de Postman](Capturas/7.png)
+
+Y mediante scripts validamos que se ejecuto exitosamente.
+
+![Captura de Postman](Capturas/8.png)
