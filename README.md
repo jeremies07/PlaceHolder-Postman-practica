@@ -15,3 +15,7 @@ Primero obtengo a todo los clientes
 Luego creo la Variable Path para buscar usuarios individualmente.
 
 ![Captura de Postman](Capturas/3.png)
+
+Y por ultimo mediante scripts valido correctamente el status
+
+![Captura de Postman](Capturas/4.png)
