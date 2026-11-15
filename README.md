@@ -39,3 +39,9 @@ Se realizo la Modificación de información de usuario
 Y mediante scripts validamos que se ejecuto exitosamente.
 
 ![Captura de Postman](Capturas/8.png)
+
+## Método delete
+
+Se realizo la eliminación de un usuario exitosamente
+
+![Captura de Postman](Capturas/9.png)
